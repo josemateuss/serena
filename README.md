@@ -1,1 +1,0 @@
-# lps1-compilator
