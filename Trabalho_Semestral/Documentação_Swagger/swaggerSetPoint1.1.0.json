@@ -1,0 +1,718 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Um software que cria e gerencia `campeonatos de tênis`.",
+    "version": "1.1.0",
+    "title": "Set Point",
+    "termsOfService": "http://swagger.io/terms/"
+  },
+  "tags": [
+    {
+      "name": "players",
+      "description": "Operações sobre a entidade de jogadores"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/players/register": {
+      "post": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Criar player",
+        "description": "Só é possível criar enquanto estiver logado no sistema.",
+        "operationId": "RegisterPlayer",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json do player criado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/players/search/all": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Listar todos players ativos",
+        "description": "Listar players.",
+        "operationId": "SearchAllPlayers",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json dos players listado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/players/search": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Listar um player ativo",
+        "description": "Listar um, player ativo que foi buscado",
+        "operationId": "SearchPlayer",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json dos players listado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/players/edit": {
+      "put": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Atualizar um player ativo",
+        "description": "",
+        "operationId": "EditPlayer",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Player que terá informações aualizadas",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "ID fornecido é inválido"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/players/delete": {
+      "delete": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Apagar um player",
+        "description": "Apagar um player já cadastrado",
+        "operationId": "DeletePlayer",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "idUsername",
+            "in": "path",
+            "description": "O jogadore será excluído por meio de uma exclusão lógica",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Nome do player é inválido"
+          },
+          "404": {
+            "description": "Player não encontrado"
+          }
+        }
+      }
+    },
+    "/championships/register": {
+      "post": {
+        "tags": [
+          "championships"
+        ],
+        "summary": "Criar player",
+        "description": "Só é possível criar enquanto estiver logado no sistema.",
+        "operationId": "RegisterChampionship",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json do player criado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/championships/search/all": {
+      "get": {
+        "tags": [
+          "championships"
+        ],
+        "summary": "Listar todos players ativos",
+        "description": "Listar players.",
+        "operationId": "SearchAllChampionships",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json dos players listado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/championships/search": {
+      "get": {
+        "tags": [
+          "championships"
+        ],
+        "summary": "Listar um player ativo",
+        "description": "Listar um, player ativo que foi buscado",
+        "operationId": "SearchChampionship",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json dos players listado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/championships/edit": {
+      "put": {
+        "tags": [
+          "championships"
+        ],
+        "summary": "Atualizar um player ativo",
+        "description": "",
+        "operationId": "EditChampionship",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Player que terá informações aualizadas",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/player"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "ID fornecido é inválido"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/championships/delete": {
+      "delete": {
+        "tags": [
+          "championships"
+        ],
+        "summary": "Apagar um player",
+        "description": "Apagar um player já cadastrado",
+        "operationId": "DeleteChampionship",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "idUsername",
+            "in": "path",
+            "description": "O jogadore será excluído por meio de uma exclusão lógica",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Nome do player é inválido"
+          },
+          "404": {
+            "description": "Player não encontrado"
+          }
+        }
+      }
+    },
+    "/login": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Logar no sistema",
+        "description": "",
+        "operationId": "loginUser",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Nome de usuário para o login",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "Senha para o usuário digitar",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {
+              "X-Rate-Limit": {
+                "type": "integer",
+                "format": "int32",
+                "description": "Chamadas permitidas por hora"
+              },
+              "X-Expires-After": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Data em UTC quando sessão expira"
+              }
+            }
+          },
+          "400": {
+            "description": "Usuário ou Senha inválido(s)"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Deslogar para quem está logado no sistema",
+        "description": "",
+        "operationId": "logoutUser",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "Operação realizada com sucesso"
+          }
+        }
+      }
+    },
+    "/matches/create": {
+      "post": {
+        "tags": [
+          "matches"
+        ],
+        "summary": "Criar Partida",
+        "description": "Só é possível criar enquanto estiver logado no sistema.",
+        "operationId": "CreateMatch",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Json da partida criado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Time"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Operação relizada com sucesso"
+          }
+        }
+      }
+    },
+    "/matches/edit": {
+      "put": {
+        "tags": [
+          "matches"
+        ],
+        "summary": "Editar uma partida",
+        "description": "",
+        "operationId": "updateTeam",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Usuário que será adicionado",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "ID do time é inválido"
+          },
+          "404": {
+            "description": "Time não encontrado"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/matches/delete": {
+      "delete": {
+        "tags": [
+          "matches"
+        ],
+        "summary": "Apagar Partida",
+        "description": "Apagar uma partida cadastrado",
+        "operationId": "DeleteMatch",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "idUsername",
+            "in": "path",
+            "description": "A partida será apagado",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Parâmetro é inválido"
+          },
+          "404": {
+            "description": "Partida não encontrada"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit"
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Order": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "petId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shipDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "Order Status",
+          "enum": [
+            "placed",
+            "approved",
+            "delivered"
+          ]
+        },
+        "complete": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "xml": {
+        "name": "Order"
+      }
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Category"
+      }
+    },
+    "player": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "cpf": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Player Status"
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "Time": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "teamname": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "User Status"
+        }
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Tag"
+      }
+    },
+    "User": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "name": {
+          "type": "string",
+          "example": "João"
+        },
+        "photoUrls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "xml": {
+            "name": "tag",
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/Tag"
+          }
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

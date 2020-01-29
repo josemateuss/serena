@@ -1,0 +1,153 @@
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #1a237e;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+    .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+        color: #fff;
+        background-color:#283593;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+
+    a:focus, a:hover {
+        background-color: #0d47a1;
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .sidenav {
+        padding-top: 20px;
+        background-color: #1a237e;
+        height: 400%;
+    }
+
+    h2, h4, h3{
+        text-align: center;
+    }
+
+.form-control{
+    width: 75%;
+}
+th, td{
+    text-align: center;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #1a237e;
+}
+.navbar-inverse {
+    border-color: #1a237e;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1a237e;
+    border-color: #283593;
+}
+
+input.match{
+    width: 35%
+}
+
+
+div.player2{
+    margin-left: 46%;
+    margin-top: -19%;
+}
+
+div.panel-heading{
+    font-weight: bold;
+}
+
+button.match{
+    color: white;
+    background-color: #1a237e;
+    border-color: #1a237e;
+    margin-left: 77%;
+    margin-top: -2%;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #1a237e;
+    border-color: #1a237e;
+}
+
+label.matches{
+    margin-right:90%;
+}
+
+button.btn-match{
+    color: white;
+    background-color: #1a237e;
+    border-color:white;
+}
+
+
+
+div.modal-header{
+    color: white;
+    background-color: #1a237e;
+}
+
+div.modal-footer{
+    color: white;
+    background-color: #1a237e;
+}
+
+button.team{
+    margin-left: 67%;
+    color: white;
+    background-color: #1a237e;
+}
+
+
+button.champ{
+    color: white;
+    background-color: #1a237e;
+}
+
+button.player{
+    color: white;
+    background-color: #1a237e;
+}

@@ -1,0 +1,51 @@
+package main
+
+import ("fmt"
+		"net/http"
+		//"encoding/json"
+		"github.com/gorilla/mux"
+		"github.com/globalsign/mgo"
+		"github.com/globalsign/mgo/bson")
+
+func main() {
+
+	fmt.Println("Starting server...")
+
+	r := mux.NewRouter()
+
+	//r.HandleFunc("/time", Time).Methods("GET")
+
+	r.HandleFunc("/users", PostUser).Methods("POST")
+
+	http.ListenAndServe("172.22.51.137:8080", r)
+}
+
+type User struct {
+	Name   	 	string  `json:"name"`
+	Pass     	string  `json:"pass"`
+	Birthdate string  `json:"birthdate"`
+	Gender   	string  `json:"gender"`
+}
+
+func PostUser() {
+	busca := User{}
+	session, err := mgo.Dial("localhost")
+	c := session.DB("banco").C("users")
+	defer session.Close()
+
+	err = c.Insert(&User{Name: "Jose", Pass: "123456", Birthdate: "1995/12/18", Gender: "Male"})
+	if err != nil {
+		fmt.Println("erro 400")
+		panic(err)
+	}
+	else {
+		fmt.Println("sucesso 200")
+	}
+
+	err = c.Find(bson.M{"Name": "Jose"}).One(&busca)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(busca)
+}

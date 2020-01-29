@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+  <link href="../tmpl/css/style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <script type="text/javascript" src="tmpl/js/jquery.mask.min"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#cpf").mask("000.000.000-00")
+    $("#phone").mask("(00) 00000-0000")
+    $("#birthdate").mask("00/00/0000")
+  })
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title id="titulo">Serena</title>
+</head>
+ 
+<body>
+
+
+<!-- Page Content -->
+<div style="margin-left:15%">
+
+<div class="w3-container w3-teal" style="background-color: #000080!important;width: 200%; right: 18%;position: relative;">
+  <h3 style="font-family: 'Francois One', sans-serif;color: #FFFFFF;">Serena</h3>
+</div>
+
+
+  
+  <form class="modal-content animate" method="post" action="/player" style="width: 100%;font-family: 'Francois One', sans-serif;margin-left: -7%;">
+  <fieldset>
+    <h4 style = "font-family: 'Francois One', sans-serif; text-align: center;">Cadastro de Usuário</h4>
+    Nome Completo:<br>
+    <input type="text" name="firstname" id="firstname" style="width: 60%"><br>
+    Email:<br>
+    <input type="email" name="email" id="email" style="width: 60%"><br>
+    Senha:<br>
+    <input type="password" name="pass" id="pass" style="width: 60%"><br>
+    CPF:<br>
+    <input type="text" name="cpf" id="cpf" style="width: 60%"><br>
+    Data de Nascimento:<br>
+    <input type="date" name="birthdate" id="birthdate" style="width: 60%"><br>
+    Telefone:<br>
+    <input type="tel" name="phone" id="phone" style="width: 60%"><br>
+    Classe:<br>
+    <select id="class" name="class" id="class" style="width: 60%">
+    <option value="">Classe</option>
+    <option value="first">1ª Classe</option>
+    <option value="second">2ª Classe</option>
+    <option value="third">3ª Classe</option>
+    <option value="fourth">4ª Classe</option>
+    <option value="fifth">5ª Classe</option>
+    </select><br><br>
+    Grupo:<br>
+    <select id="group" name="group" id="group" style="width: 60%">
+    <option value="">Grupo</option>
+    <option value="1">Grupo 1</option>
+    <option value="2">Grupo 2</option>
+    <option value="3">Grupo 3</option>
+    <option value="4">Grupo 4</option>
+    <option value="5">Grupo 5</option>
+    </select><br><br>
+    Categoria:<br>
+    <select id="category" name="category" id="category" style="width: 60%">
+    <option value="" disabled selected>Categoria</option>
+    <option value="A">Categoria A</option>
+    <option value="B">Categoria B</option>
+    <option value="C">Categoria C</option>
+    <option value="D">Categoria D</option>
+    <option value="E">Categoria E</option>
+    </select><br><br>
+    <input style="color: #FFFFFF;background-color: #000080!important; position: relative;left: 75%;" type="submit" value="Cadastar Jogador">
+<!--     <a href="index">Cadastrar</a></span> -->
+  </fieldset>
+  </form>
+</div>
+ 
+</body>
+</html>

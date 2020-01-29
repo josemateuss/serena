@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+  <title>Serena</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="tmpl/css/style.css" type="text/css" rel="stylesheet">
+  <link href="tmpl/js/script.js" type="text/javascript" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Serena</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/player" onclick="returnUser()">Jogadores</a></li>
+        <li><a href="/team">Equipes</a></li>
+        <li class="active"><a href="/champ">Campeonatos</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/agenda">Agenda</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/index"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAINEL DE JOGOS -->
+
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="/champ">Tabela de Campeonatos</a></p>
+    </div>
+    <div class="col-sm-8 text-left" id="champManager">
+      <br><br>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Campeonato de Verão</div>
+        <div class="panel-body">
+            <p><strong>Confrontos:</strong></p>        
+            <div class="list-group">
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Camila Cardoso x José Mateus</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Maria Clara Araújo x Pedro Henrique Lima</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Maria Luiza Mello x Lucas Mol</a>
+            </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Campeonato de Inverno</div>
+        <div class="panel-body">
+            <p><strong>Confrontos:</strong></p>        
+            <div class="list-group">
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Karina Cardoso x José Mateus</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Clara Mendonça Henrique Avezedo</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Luiza Guimarães x Lucas Augusto Fernandes</a>
+            </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Campeonato de Julho</div>
+        <div class="panel-body">
+            <p><strong>Confrontos:</strong></p>        
+            <div class="list-group">
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Gabriela Nascimento x José Eduardo Limeira</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Maria Martins x Pedro Fagundes</a>
+              <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal">Leticia Mello x Matheus Lino</a>
+            </div>
+        </div>
+      </div>
+
+</div>
+</div>
+
+<!-- MODAL -->
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" id="headerModalMatch">
+        <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+        <h4 class="modal-title">Atualização de Partida</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/action_page.php">
+          <p style="text-align: left;"><strong>1ª Set</strong></p>
+          <div class="form-group">
+            <label for="points" class="matches">Points:</label>
+            <input type="text" class="form-control match" id="points">
+          </div>
+          <div class="form-group">
+            <label class="matches" for="games">Games:</label>
+            <input type="text" class="form-control match" id="games">
+          </div>
+          <p style="text-align: left;"><strong>2ª Set</strong></p>
+          <div class="form-group">
+            <label class="matches" for="points">Points:</label>
+            <input type="text" class="form-control match" id="points">
+          </div>
+          <div class="form-group">
+            <label class="matches" for="games">Games:</label>
+            <input type="text" class="form-control match" id="games">
+          </div>
+          <p style="text-align: left;"><strong>3ª Set</strong></p>
+          <div class="form-group">
+            <label class="matches"for="points">Points:</label>
+            <input type="text" class="form-control match" id="points">
+          </div>
+          <div class="form-group">
+            <label class="matches" for="games">Games:</label>
+            <input type="text" class="form-control match" id="games">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" id="footerModalMatch">
+        <button type="submit" class="btn btn-default btn-match">Salvar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

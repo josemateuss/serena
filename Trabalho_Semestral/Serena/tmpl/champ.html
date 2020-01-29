@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+  <title>Serena</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="tmpl/css/style.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="tmpl/js/champ.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Serena</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/player" onclick="returnUser()">Jogadores</a></li>
+        <li><a href="/team">Equipes</a></li>
+        <li class="active"><a href="/champ">Campeonatos</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/agenda">Agenda</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/index"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#" data-toggle="modal" data-target="#champRegister" onclick="returnUserChamp()">Cadastrar Campeonatos</a></p>
+      <p><a href="/manager_champ">Gerenciar Campeonatos</a></p>
+    </div>
+    <div class="col-sm-8 text-left" id="champ"> 
+    <div class="container">
+        <h2>Tabela de Campeonatos</h2>            
+          <table class="table table-condensed" id="tableChamp">
+            <thead>
+              <tr>
+                <th>Campeonato</th>
+                <th>Data de Início</th>
+                <th>Organizador(a)</th>
+                <th>Jogadores</th>
+              </tr>
+            </thead>
+            <tbody id="bodyTableChamp">
+            </tbody>
+          </table>
+          <button id="btnChamp" type="submit" class="btn btn-default player" onclick="returnChamp()">ver</button>
+    </div>
+
+      <div class="container">
+        <!-- Button to Open the Modal -->
+
+        <!-- The Modal -->
+        <div class="modal" id="champRegister">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Cadastrar Campeonato</h4>
+                <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form action="#" id="formChamp" name="formChamp">
+                    <div class="form-group">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                      <label for="name">Nome do Campeonato:</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                      <label for="dateChamp">Data de Início:</label>
+                      <input type="date" class="form-control" id="dateChamp" name="dateChamp">
+                    </div>
+                    <div class="form-group input-group date">
+                      <span class="glyphicon glyphicon-user"></span>
+                      <label for="admin"> Organizador(a):</label>
+                      <select class="form-control" id="adminChamp" name="adminChamp">
+                        <option value="n" disabled selected></option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <span class="glyphicon glyphicon-sort-by-order"></span>
+                      <label for="set">Quantos Sets terão cada partida do seu campeonato?</label>
+                      <select class="form-control" id="set" name="set">
+                        <option value="n" disabled selected></option>
+                        <option value="1">1 Set</option>
+                        <option value="2">2 Sets</option>
+                        <option value="3">3 Sets</option>
+                        <option value="4">4 Sets</option>
+                        <option value="5">5 Sets</option>
+                        <option value="6">6 Sets</option>
+                        <option value="7">7 Sets</option>
+                        <option value="8">8 Sets</option>
+                        <option value="9">9 Sets</option>
+                        <option value="10">10 Sets</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <span class="glyphicon glyphicon-list-alt"></span>
+                      <label for="players">Jogadores (Segure a tecla "Shift" para selecionar mais de uma opção):</label>
+                      <select multiple class="form-control" id="playerChamp" name="playerChamp">
+                        <option value="" disabled selected></option>
+                      </select>
+                    </div>
+                  </form>
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="champ close" onclick="registerChamp()" dismiss="modal">Cadastrar</button>
+                <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+</body>
+</html>
