@@ -8,4 +8,4 @@ Sistema de gerenciamento de partidas e campeonatos de tênis desenvolvido na dis
 * CSS
 * JavaScript
 
-José Mateus Pereira Santos – [Linkedin](https://www.linkedin.com//in/josé-mateus-937560106/) – mateus.18.santos@gmail.com
+José Mateus Pereira Santos – [Linkedin](https://www.linkedin.com/in/josé-mateus-937560106/) – mateus.18.santos@gmail.com
